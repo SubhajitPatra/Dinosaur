@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinosaurs</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@700&family=Hachi+Maru+Pop&display=swap");
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      scroll-behavior: smooth;
+      -moz-overflow-style: none;
+      scrollbar-width: none;
+
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding-top: 100px;
+      padding-bottom: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: row;
+      background-color: #db9824;
+
+    }
+
+    #home {
+      background-color: #db9824;
+      background-image: url("hero-image.png");
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+    }
+
+    #Types-of-dinosaurs {
+      background-color: #6dc4ff;
+    }
+
+    #Types-of-dinosaurs {
+      background-image: linear-gradient(blue, green);
+      padding: justify;
+    }
+
+    #Saurischia {
+      background-color: #7fd31f;
+      background-image: url("saurischia.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #Saurischia-text {
+      background-image: linear-gradient(#de6262, #b75d19);
+      padding: justify;
+      width: 50%;
+    }
+
+    #Ornithischia {
+      background-color: #254edb;
+      background-image: url("ornithischia.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      text-align: justify;
+    }
+
+    #Ornithischia-text {
+      background-image: linear-gradient(#455742, #48830D,#275705);
+    }
+
+    #contribution {
+      background-color: #ff8665;
+      background-image: url("contribution.jpeg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #contribution-text {
+      background-image: linear-gradient(red, orange);
+      width: 70%;
+      flex-grow: 2;
+
+    }
+
+    #How-they-became-extinct {
+      background-color: #db9824;
+      background-image: url("extinct.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #How-they-became-extinct-text {
+      border-radius: 5px;
+      background-image: linear-gradient(#7A4709, orange, red);
+      padding: justify;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .nav {
+      position: fixed;
+      width: 100%;
+      height: auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-family: "Abril Fatface", cursive;
+      font-size: 100px;
+    }
+
+    b {
+      font-family: "Dancing Script", cursive;
+      font-size: 40px;
+      color: white;
+    }
+
+    p {
+      font-family: "Hachi Maru Pop", cursive;
+      color: white;
+    }
+
+    .nav-link {
+      font-family: "Dancing Script", cursive;
+    }
+
+    .image {
+      border-radius: 15px;
+      display: flex;
+      flex: 1;
+      max-width: 50vw;
+    }
+
+    .page-portion {
+      flex: 1;
+      width: 50%;
+      text-align: justify;
+      padding: 20px;
+    }
+
+    #herotext {
+      flex: 0.6;
+      align-self: flex-end;
+      justify-self: center;
+      text-align: right;
+      background-image: linear-gradient(yellow, red);
+      box-shadow: 5px 5px 3px 3px #333;
+    }
+
+    #Types-of-dinosaurs {
+      background-color: #035f8f;
+      background-image: url("dinotree.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      text-align: justify;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #d8fdf4;
+    }
+
+    
+
+    .d:hover {
+      background-color: violet;
+    }
+
+    .odd {
+      flex-direction: row;
+      background-position: left;
+    }
+
+    .even {
+      flex-direction: row-reverse;
+      background-position: right;
+    }
+
+    h4 {
+      color: whitesmoke;
+      text-decoration: underline;
+      font-size: 20px;
+    }
+    h3{
+      color: #571042;
+      background-color: yellow;
+      font-size: 28px;
+    }
+    h2{
+      color: #FFD365;
+      background-color: #14424f;
+      font-size: 28px;
+    }
+    .types{
+      font-weight: 42px;
+      color: white;
+      background-color:#571042;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <ul>
+      <li><a class="nav-link d" href="#home">Home</a></li>
+      <li><a class="nav-link d" href="#Types-of-dinosaurs">Types-of-dinosaurs</a></li>
+      <li><a class="nav-link d" href="#Saurischia">Saurischia</a></li>
+      <li><a class="nav-link d" href="#Ornithischia">Ornithischia</a></li>
+      <li><a class="nav-link d" href="#How-they-became-extinct">How-they-became-extinct??</a></li>
+    </ul>
+  </div>
+  <div class="content"> 
+    <div class="page odd" id="home">
+      <div class="page-portion"></div>
+      <div class="page-portion" id="herotext">
+        <h1>Dinosaurs</h1>
+        <b>The large group of reptiles that once ruled the earth for most of the Mesozoic era(245-265 million years
+          ago)</b>
+        <p id="subheading">
+          Let us know a little bit about this prehistoric animal that once ruled the earth.
+        </p>
+      </div>
+    </div>
+    <div class="page even" id="Types-of-dinosaurs">
+      <div class="page-portion"></div>
+      <div class="page-portion" id="Types-of-dinosaurs-text">
+        <b>Types of dinosaurs</b>
+
+        <ol>
+          <li>
+            <h2>Saurischia</h2>
+            <p>
+              Saurischia is one of the two basic divisions of dinosaurs.
+              In 1888, Harry Seeley classified dinosaurs into two orders, based on their hip structure,
+              though today most paleontologists classify Saurischia as an unranked clade rather than an
+              order.All carnivorous dinosaurs (certain types of theropods) are traditionally classified as saurischians,
+              as are all of the birds and one of the two primary lineages of herbivorous dinosaurs, the sauropodomorphs.
+              At the end of the Cretaceous Period, all saurischians except the birds became How-they-became-extinct? in
+              the course of the
+              Cretaceous–Paleogene How-they-became-extinct?ion event. Birds, as direct descendants of one group of
+              theropod dinosaurs, are
+              a sub-clade of saurischian dinosaurs in phylogenetic classification.
+
+              Saurischian dinosaurs are traditionally distinguished from ornithischian dinosaurs by their three-pronged
+              pelvic structure, with the pubis pointed forward. The ornithischians' pelvis is arranged with the pubis
+              rotated backward, parallel with the ischium, often also with a forward-pointing process, giving a
+              four-pronged structure. The saurischian hip structure led Seeley to name them "lizard-hipped" dinosaurs,
+              because they retained the ancestral hip anatomy also found in modern lizards and other reptiles.
+              He named ornithischians "bird-hipped" dinosaurs because their hip arrangement was superficially similar
+              to that of birds, though he did not propose any specific relationship between ornithischians and birds.
+              However, in the view which has long been held, this "bird-hipped" arrangement evolved several times
+              independently in dinosaurs, first in the ornithischians, then in the lineage of saurischians including
+              birds (Avialae), and lastly in the therizinosaurians. This would then be an example of convergent
+              evolution, avialans, therizinosaurians, and ornithischian dinosaurs all developed a similar hip anatomy
+              independently of each other, possibly as an adaptation to their herbivorous or omnivorous diets.
+            </p>
+          </li>
+          <li>
+            <h2>Ornithischia</h2>
+            <p>
+              In 1887, Harry Seeley divided Dinosauria into two clades: Ornithischia and Saurischia.
+              Ornithischia is a strongly supported clade with an abundance of diagnostic characters.
+              The two most notable traits are a "bird-like" hip and beak-like predentary structure, though they shared
+              other features as well.The ornithischian pelvis was "opisthopubic", meaning that the pubis pointed down
+              and
+              backwards (posterior), parallel with the ischium . Additionally, the ilium had a
+              forward-pointing process (the preacetabular process) to support the abdomen. This resulted in a
+              four-pronged pelvic structure. In contrast to this, the saurischian pelvis was "propubic", meaning the
+              pubis pointed toward the head (anterior), as in ancestral reptiles.
+
+
+
+
+            </p>
+
+          </li>
+          <li class="types">These were the two basic classification of dinosaurs based on their hip structure.</li>
+
+        </ol>
+
+
+
+      </div>
+    </div>
+    <div class="page odd" id="Saurischia">
+      <div class="page-portion"></div>
+      <div class="page-portion" id="Saurischia-text">
+        <b>Saurischia</b>
+        <p>
+          Saurischia is broadly divided into two category theropoda and sauropodomorpha.
+        <ol>
+          <li>
+            <h3>Theropoda</h3>
+            <p>
+              It is further divided into three categories: Herrerasauridae , Ceratosauria and Tetanurae.
+            <ol>
+              <li>
+                <h4 >Herrerasauridae</h4>
+                <p>
+                  Herrerasauridae is a family of carnivorous basal saurischian dinosaurs.
+                  They are among the oldest known dinosaurs, first appearing in the fossil
+                  record around 233.23 million years ago, before becoming How-they-became-extinct? by the end of the
+                  Triassic period.Herrerasaurids were relatively small-sized dinosaurs, normally no more than 4 metres
+                  (13 ft) long.
+                  The hand is primitive in having five metacarpals and the third finger longer than the second, but
+                  resembles those
+                  of theropods in having only three long fingers, with curved claws. Herrerasaurids also have a hinged
+                  mandible,
+                  which is also found in theropods.
+                </p>
+              </li>
+              <li>
+                <h4>Ceratosauria</h4>
+                <p>
+                  Ceratosaurs are members of the clade Ceratosauria, a group of dinosaurs defined as
+                  all theropods sharing a more recent common ancestor with Ceratosaurus than with birds.
+                  Ceratosaurs are believed to have diverged from the rest of Theropoda by the early
+                  Jurassic, however, the oldest confirmed discovered specimens date to the Late Jurassic.
+                  According to the majority of the latest research, Ceratosauria includes the Late
+                  Jurassic to Late Cretaceous theropods Ceratosaurus, Elaphrosaurus, and Abelisaurus,
+                  found primarily (though not exclusively) in the Southern Hemisphere. Originally,
+                  Ceratosauria included the above dinosaurs plus the Late Triassic to Early Jurassic
+                  Coelophysoidea and Dilophosauridae, implying a much earlier divergence of
+                  ceratosaurs from other theropods.
+                </p>
+              </li>
+              <li>
+                <h4>Tetanurae</h4>
+                <p>
+                  Tetanurae ("stiff tails") is a clade that includes most theropod dinosaurs,
+                  including megalosauroids, allosauroids, tyrannosauroids, ornithomimosaurs, maniraptorans, and
+                  birds.Tetanurans are defined as all theropods more closely related to modern birds than
+                  to Ceratosaurus and contain the majority of predatory dinosaur diversity. Tetanurae likely
+                  diverged from its sister group, Ceratosauria, during the late Triassic. Tetanurae first appeared
+                  in the fossil record by the Early Jurassic about 190 mya and by the Middle Jurassic had become
+                  globally distributed.
+
+                  The group was named by Jacques Gauthier in 1986 and originally had two main subgroups: Carnosauria and
+                  Coelurosauria, the clade containing birds and related dinosaurs such as compsognathids,
+                  tyrannosaurids,
+                  ornithomimosaurs, and maniraptorans. The original Carnosauria was a polyphyletic group including
+                  any large carnivorous theropod.
+                </p>
+              </li>
+            </ol>
+            </p>
+          </li>
+          <li>
+            <h3>sauropodomorpha</h3>
+            <p>
+              sauropodomorpha is further divided into two groups: Sauropoda and Prosauropoda
+            <ol>
+              <li>
+                <h4>Sauropoda</h4>
+                <p>
+                  Sauropoda /sɔːˈrɒpədə/, whose members are known as sauropods /ˈsɔːrəpɒdz/[2][3]
+                  (from sauro- + -pod, "lizard-footed"), is a clade of saurischian ("lizard-hipped") dinosaurs.
+                  Sauropods had very long necks, long tails, small heads (relative to the rest of their body), and four
+                  thick, pillar-like legs. They are notable for the enormous sizes attained by some species, and the
+                  group
+                  includes the largest animals to have ever lived on land. Well-known genera include Brachiosaurus,
+                  Diplodocus, Apatosaurus and Brontosaurus.[4][5]
+
+
+                  The oldest known unequivocal sauropod dinosaurs are known from the Early Jurassic.[6]
+                  Isanosaurus and Antetonitrus were originally described as Triassic sauropods,[7][8] but their age,
+                  and in the case of Antetonitrus also its sauropod status, were subsequently questioned.[9][6][10]
+                  Sauropod-like sauropodomorph tracks from the Fleming Fjord Formation (Greenland) might, however,
+                  indicate the occurrence of the group in the Late Triassic.[6] By the Late Jurassic (150 million years
+                  ago), sauropods had become widespread (especially the diplodocids and brachiosaurids). By the Late
+                  Cretaceous, one group of sauropods, the titanosaurs, had replaced all others and had a near-global
+                  distribution. However, as with all other non-avian dinosaurs alive at the time, the titanosaurs died
+                  out in the Cretaceous–Paleogene How-they-became-extinct?ion event. Fossilised remains of sauropods
+                  have been found on every continent, including Antarctica.[
+                </p>
+              </li>
+              <li>
+                <h4>Prosauropoda</h4>
+                <p>
+                  Prosauropoda, meaning 'before the lizard-footed', were a genus of early herbivourous
+                  dinosaurs that lived during the Triassic and early Jurassic periods. As a group of the
+                  earliest dinosaurs in their lineage, they were frequently the dominant herbivores in their
+                  environment, reaching sizes of 6 to 10 meters in length. While relatively small compared to
+                  its later relatives, their size was considerable in such an early period of the dinosaurs.
+                  Like their relatives during later periods, the prosauropods had a long neck and small head.
+                  However, as these creatures predated the era of the sauropodomorphs, and had not yet evolved
+                  into quadrupedal creatures, they were still mainly bipedal, and had forelimbs shorter than
+                  their hindlimbs. The prosauropods also had a large claw for defence on their thumbs.
+                  Originally thought of as ancestors to the sauropods, as implied by their given name,
+                  the prosauropods are no considered to be a parallel lineage.
+                </p>
+              </li>
+            </ol>
+            </p>
+          </li>
+        </ol>
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="page even" id="Ornithischia">
+      <div class="page-portion"></div>
+      <div class="page-portion" id="Ornithischia-text">
+        <b>Ornithischia</b>
+        <p>
+          Ornithischia is broadly divided into two category thyreophora and cerapoda.
+        <ol>
+          <li>
+            <h3>Thyreophora</h3>
+            <p>
+              It is further divided into three categories: Scelidosaurus, Stegosauria and Ankylosauria.
+            <ol>
+              <li>
+                <h4>Scelidosaurus</h4>
+                <p>
+                  Scelidosaurus (with the intended meaning of "limb lizard", meaning 'rib of beef' and
+                  sauros meaning 'lizard')[1] is a genus of herbivorous armoured ornithischian dinosaur
+                  from the Jurassic of the British Isles.
+
+                  Scelidosaurus lived during the Early Jurassic Period, during the Sinemurian to Pliensbachian
+                  stages around 191 million years ago. This genus and related genera at the time lived on the
+                  supercontinent Laurasia. Its fossils have been found near Charmouth in Dorset, England, and
+                  are known for their excellent preservation. Scelidosaurus has been called the earliest complete
+                  dinosaur.
+                  It is the most completely known dinosaur of the British Isles. Scelidosaurus is currently the only
+                  classified
+                  dinosaur found in Ireland. Despite this, a modern description only materialised in 2020.
+                  After initial finds in the 1850s, comparative anatomist Richard Owen named and described Scelidosaurus
+                  in
+                  1859. Only one species, Scelidosaurus harrisonii named by Owen in 1861, is considered valid today,
+                  although one other species was proposed in 1996.
+
+                  Scelidosaurus was about 4 metres (13 ft) long. It was a largely quadrupedal animal, feeding on low
+                  scrubby
+                  plants, the parts of which were bitten off by the small, elongated head to be processed in the large
+                  gut.
+                  Scelidosaurus was lightly armoured, protected by long horizontal rows of keeled oval scutes that
+                  stretched
+                  along the neck, back and tail.
+                </p>
+              </li>
+              <li>
+                <h4>Stegosauria</h4>
+                <p>
+                  Stegosauria is a group of herbivorous ornithischian dinosaurs that lived during the Jurassic and early
+                  Cretaceous
+                  periods. Stegosaurian fossils have been found mostly in the Northern Hemisphere, predominantly in what
+                  is
+                  now North America, Europe, Africa, South America and Asia. Their geographical origins are unclear;
+                  the earliest unequivocal stegosaurian, Huayangosaurus taibaii, lived in China.
+
+                  Stegosaurians were armored dinosaurs (thyreophorans). Originally, they did not differ much from more
+                  primitive members of that group, being small, low-slung, running animals protected by armored scutes.
+                  An early evolutionary innovation was the development of spikes as defensive weapons.
+                  Later species, belonging to a subgroup called the Stegosauridae, became larger, and developed long
+                  hindlimbs
+                  that no longer allowed them to run. This increased the importance of active defence by the thagomizer,
+                  which could ward off even large predators because the tail was in a higher position, pointing
+                  horizontally to
+                  the rear from the broad pelvis. Stegosaurids had complex arrays of spikes and plates running along
+                  their backs, hips and tails. Their necks became longer and their small heads became narrow, able to
+                  selectively bite off the best parts of cycads with their beaks. When these plant types declined in
+                  diversity, so did the stegosaurians, which became How-they-became-extinct? during the first half of
+                  the Cretaceous period.
+
+                  The first stegosaurian finds in the early 19th century were fragmentary. Better fossil material, of
+                  the
+                  genus Dacentrurus, was discovered in 1874 in England. Soon after, in 1877, the first nearly-complete
+                  skeleton was discovered in the United States. Professor Othniel Charles Marsh that year classified
+                  such
+                  specimens in the new genus Stegosaurus, from which the group acquired its name, and which is still by
+                  far
+                  the most famous stegosaurian. During the latter half of the twentieth century, many important Chinese
+                  finds
+                  were made, representing about half of the presently known diversity of stegosaurians.
+                </p>
+              </li>
+              <li>
+                <h4>Ankylosauria</h4>
+                <p>
+                  Ankylosauria is a group of herbivorous dinosaurs of the order Ornithischia.
+                  It includes the great majority of dinosaurs with armor in the form of bony
+                  osteoderms, similar to turtles. Ankylosaurs were bulky quadrupeds, with short,
+                  powerful limbs. They are known to have first appeared in the early Jurassic Period,
+                  and persisted until the end of the Cretaceous Period. The two main families of
+                  Ankylosaurs, Nodosauridae and Ankylosauridae are primarily known from the Northern
+                  Hemisphere, but more basal ankylosaurs are known from the Australia-Antarctica
+                  region during the Cretaceous.
+
+                  Ankylosauria was first named by Henry Fairfield Osborn in 1923.[1] In the Linnaean
+                  classification system, the group is usually considered either a suborder or an infraorder. It is
+                  contained within the group Thyreophora, which also includes the stegosaurs, armored dinosaurs known
+                  for their combination of plates and spikes. </p>
+              </li>
+            </ol>
+            </p>
+          </li>
+          <li>
+            <h3>Cerapoda</h3>
+            <p>
+              Cerapoda is further divided into two groups: Ornithopoda and Marginocephalia
+            <ol>
+              <li>
+                <h4>Ornithopoda</h4>
+                <p>
+                  Ornithopods or members of the clade Ornithopoda are a group of ornithischian dinosaurs that started
+                  out as small,
+                  bipedal running grazers, and grew in size and numbers until they became one of the most successful
+                  groups of
+                  herbivores in the Cretaceous world, and dominated the North American landscape. Their major
+                  evolutionary
+                  advantage was the progressive development of a chewing apparatus that became the most sophisticated
+                  ever
+                  developed by a non-avian dinosaur, rivaling that of modern mammals such as the domestic cow. They
+                  reached
+                  their apex of diversity and ecological dominance in the hadrosaurids (colloquially known as
+                  'duck-bills'),
+                  before they were wiped out by the Cretaceous–Paleogene How-they-became-extinct?ion event along with
+                  all other non-avian
+                  dinosaurs. Members are known from all seven continents, though they are generally rare in the Southern
+                  Hemisphere.
+
+
+                </p>
+              </li>
+              <li>
+                <h4>Marginocephalia</h4>
+                <p>
+                  Marginocephalia (Latin: margin-head) is a clade of ornithischian dinosaurs that is characterized by a
+                  bony shelf or margin at the back of the skull. These fringes were likely used for display. There are
+                  two clades included in Marginocephalia: the thick-skulled Pachycephalosauria and the horned
+                  Ceratopsia.
+                  All members of Marginocephalia were primarily herbivores.[citation needed] They basally used
+                  gastroliths
+                  to aid in digestion of tough plant matter until they convergently evolved tooth batteries in
+                  Neoceratopsia
+                  (or "new Ceratopsia") and Pachycephalosauria. Marginocephalia first evolved in the Jurassic Period and
+                  became more common in the Cretaceous. They are basally small facultative quadrupeds while derived
+                  members of the group are large obligate quadrupeds. Primitive marginocephalians are found in Asia,
+                  but the group migrated upwards into North America.
+
+
+                </p>
+              </li>
+            </ol>
+            </p>
+          </li>
+        </ol>
+        </p>
+
+      </div>
+    </div>
+    <div class="page even" id="How-they-became-extinct">
+      <div class="page-portion"></div>
+      <div class="page-portion" id="How-they-became-extinct-text">
+        <b>How they became How-they-became-extinct??</b>
+        <p>
+          Palaeontological deductions from the fossil remnants of How-they-became-extinct? dinosaurs tell us much about
+          their classification into species as well as about their physiological and behavioural
+          characteristics. Geological evidence indicates that dinosaurs became How-they-became-extinct? at the boundary
+          between the Cretaceous and Paleogene eras, about 66 million years ago, at a time when there
+          was worldwide environmental change resulting from the impact of a large celestial object with
+          the Earth and/or from vast volcanic eruptions. However, apart from the presumption that climate
+          change and interference with food supply contributed to their How-they-became-extinct?ion, no biological
+          mechanism
+          has been suggested to explain why such a diverse range of terrestrial vertebrates ceased to exist.
+          One of perhaps several contributing mechanisms comes by extrapolating from the physiology of the
+          avian descendants of dinosaurs. This raises the possibility that cholecalciferol (vitamin D3)
+          deficiency of developing embryos in dinosaur eggs could have caused their death before hatching,
+          thus extinguishing the entire family of dinosaurs through failure to reproduce.
+        </p>
+      </div>
+    </div>
+    <div class="footer">
+      Information Courtesy:
+      <u
+        ><a href="https://en.wikipedia.org/wiki/Dinosaur"
+          >Wikipedia
+        </a></u
+      >
+    </div>
+</body>
+
+</html>
